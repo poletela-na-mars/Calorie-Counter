@@ -49,7 +49,7 @@ const calculateValues = () => {
 };
 
 const calculateCalories = () => {
-    inputsGroup.addEventListener('change', onFieldsInput);
+    inputsGroup.addEventListener('input', onFieldsInput);
     submitButton.addEventListener('click', onSubmitButtonClick);
 };
 
