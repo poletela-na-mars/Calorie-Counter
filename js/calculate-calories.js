@@ -2,7 +2,7 @@ import {
     resultBlock, submitButton, inputsGroup,
     ageInput, heightInput, weightInput, genderMaleInput,
     caloriesNorm, caloriesMaximal, caloriesMinimal
-} from "./main.js";
+} from "./script.js";
 
 const activityInput = document.querySelector('.radios-group');
 let activityIndex = 1.2;

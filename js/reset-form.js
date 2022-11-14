@@ -7,7 +7,7 @@ import {
     resultBlock,
     submitButton,
     weightInput
-} from "./main.js";
+} from "./script.js";
 
 const minPhysicalActivityInput = document.querySelector('#activity-minimal');
 
