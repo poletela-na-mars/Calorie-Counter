@@ -18,6 +18,19 @@ const onSubmitButtonClick = (evt) => {
 };
 
 const calculateValues = () => {
+    const sexIndex = genderMaleInput.checked ? 5 : -161;
+    const savedWeight = Math.round(((10 * weightInput.value) + (6.25 * heightInput.value) - (5 * ageInput.value) + sexIndex)
+        * activityIndex);
+    const incWeight = Math.round(savedWeight * 1.15);
+    const decWeight = Math.round(savedWeight * 0.85);
+
+    caloriesNorm.textContent = String(savedWeight);
+    caloriesMaximal.textContent = String(incWeight);
+    caloriesMinimal.textContent = String(decWeight);
+};
+
+const calculateCalories = () => {
+    inputsGroup.addEventListener('input', onFieldsInput);
     activityInput.addEventListener('change', (evt) => {
         switch (evt.target.id) {
             case 'activity-minimal':
@@ -37,19 +50,6 @@ const calculateValues = () => {
                 break;
         }
     });
-    const sexIndex = genderMaleInput.checked ? 5 : -161;
-    const savedWeight = ((10 * weightInput.value) + (6.25 * heightInput.value) - (5 * ageInput.value) + sexIndex)
-        * activityIndex;
-    const incWeight = savedWeight * 1.15;
-    const decWeight = savedWeight * 0.85;
-
-    caloriesNorm.textContent = String(Math.round(savedWeight));
-    caloriesMaximal.textContent = String(Math.round(incWeight));
-    caloriesMinimal.textContent = String(Math.round(decWeight));
-};
-
-const calculateCalories = () => {
-    inputsGroup.addEventListener('input', onFieldsInput);
     submitButton.addEventListener('click', onSubmitButtonClick);
 };
 
